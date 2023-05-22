@@ -5,6 +5,16 @@ import { randomUUID } from 'node:crypto'
 export class InMemoryOngsRepository implements OngsRepository {
   public items: Ong[] = []
 
+  async findByEmail(email: string) {
+    const ong = this.items.find((item) => item.email === email)
+
+    if (!ong) {
+      return null
+    }
+
+    return ong
+  }
+
   async create(data: Prisma.OngCreateInput) {
     const ong = {
       id: randomUUID(),
@@ -22,16 +32,3 @@ export class InMemoryOngsRepository implements OngsRepository {
     return ong
   }
 }
-
-// export class InMemoryUsersRepository implements UsersRepository {
-
-//   async create(data: Prisma.UserCreateInput) {
-//     const user = {
-//       id: randomUUID(),
-//       name: data.name,
-//       email: data.email,
-//       password_hash: data.password_hash,
-//       created_at: new Date(),
-//     }
-//   }
-// }
