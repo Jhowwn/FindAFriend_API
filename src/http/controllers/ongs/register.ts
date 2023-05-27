@@ -11,10 +11,10 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
     address: z.string(),
     phone_number: z.string().min(8),
     city: z.string(),
-    state: z.string(),
+    cep: z.string(),
   })
 
-  const { name, email, password, phone_number, address, city, state } =
+  const { name, email, password, phone_number, address, city, cep } =
     registerBodySchema.parse(request.body)
 
   try {
@@ -26,7 +26,7 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
       phone_number,
       address,
       city,
-      state,
+      cep,
     })
   } catch (err) {
     if (err instanceof OngAlreadyExistsError) {

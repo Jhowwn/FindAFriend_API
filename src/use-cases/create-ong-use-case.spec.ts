@@ -20,7 +20,7 @@ describe('Register a new Ong', () => {
       password: '123456',
       address: 'rua test 142',
       city: 'São Paulo',
-      state: 'São Paulo',
+      cep: '12345678-9',
       phone_number: '123456789',
     })
 
@@ -34,7 +34,7 @@ describe('Register a new Ong', () => {
       password: '123456',
       address: 'rua test 142',
       city: 'São Paulo',
-      state: 'São Paulo',
+      cep: '12345678-9',
       phone_number: '123456789',
     })
 
@@ -52,7 +52,7 @@ describe('Register a new Ong', () => {
       password: '123456',
       address: 'rua test 142',
       city: 'São Paulo',
-      state: 'São Paulo',
+      cep: '12345678-9',
       phone_number: '123456789',
     })
 
@@ -63,7 +63,7 @@ describe('Register a new Ong', () => {
         password: '123456',
         address: 'rua test 142',
         city: 'São Paulo',
-        state: 'São Paulo',
+        cep: '12345678-9',
         phone_number: '123456789',
       }),
     ).rejects.toBeInstanceOf(OngAlreadyExistsError)

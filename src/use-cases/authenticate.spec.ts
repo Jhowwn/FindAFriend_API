@@ -20,7 +20,7 @@ describe('Authenticate Use Case', () => {
       password_hash: await hash('123456', 6),
       address: 'rua test 142',
       city: 'São Paulo',
-      state: 'São Paulo',
+      cep: '12345678-9',
       phone_number: '123456789',
     })
 
@@ -48,7 +48,7 @@ describe('Authenticate Use Case', () => {
       password_hash: await hash('123456', 6),
       address: 'rua test 142',
       city: 'São Paulo',
-      state: 'São Paulo',
+      cep: '12345678-9',
       phone_number: '123456789',
     })
 
