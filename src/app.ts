@@ -4,10 +4,12 @@ import fastifyCookie from '@fastify/cookie'
 import { ZodError } from 'zod'
 import { env } from './env'
 import { ongsRoutes } from './http/controllers/ongs/routes'
+import { petsRoutes } from './http/controllers/pets/routes'
 
 export const app = fastify()
 
 app.register(ongsRoutes)
+app.register(petsRoutes)
 
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
