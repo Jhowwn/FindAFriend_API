@@ -15,16 +15,38 @@ enum Role {
   MEMBER
 }
 
+enum Gender {
+  Femea
+  Macho
+}
+
 model Pet {
   id              String   @id @default(uuid())
   name            String
+  description     String
+  gender          Gender
+  type            String
+  age             String
+  energy          String
+  size            String
+  independence    String
   characteristics String
   city            String
-  state           String
+  requiredNeeds   String[]
   created_at      DateTime @default(now())
 
   ong    Ong    @relation(fields: [ong_id], references: [id])
   ong_id String
+
+  pet_images PetImages[]
+}
+
+model PetImages {
+  id  String @id @default(uuid())
+  url String
+
+  pet    Pet    @relation(fields: [pet_id], references: [id])
+  pet_id String
 }
 
 model Ong {
